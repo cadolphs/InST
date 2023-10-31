@@ -448,8 +448,7 @@ class CUDACallback(Callback):
         except AttributeError:
             pass
 
-
-if __name__ == "__main__":
+def main():
     # custom parser to specify config files, train, test and debug mode,
     # postfix, resume.
     # `--key value` arguments are interpreted as arguments to the trainer.
@@ -794,3 +793,7 @@ if __name__ == "__main__":
             os.rename(logdir, dst)
         if trainer.global_rank == 0:
             print(trainer.profiler.summary())
+
+
+if __name__ == "__main__":
+    main()
